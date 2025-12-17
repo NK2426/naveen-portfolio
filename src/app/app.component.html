@@ -1,0 +1,201 @@
+<main class="page">
+  <span class="orb orb--one"></span>
+  <span class="orb orb--two"></span>
+  <span class="orb orb--three"></span>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand__dot"></div>
+      <span>Naveen Kumar</span>
+    </div>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="topbar__actions">
+      <a class="btn ghost" href="#projects">View Work</a>
+      <a class="btn primary" href="mailto:hello@naveen.design">Say hello</a>
+    </div>
+  </header>
+
+  <section class="hero" id="about">
+    <div class="hero__copy">
+      <p class="eyebrow">Portfolio • Full-stack Developer</p>
+      <h1>Building reliable web products from Angular/React UI to Node APIs.</h1>
+      <p class="lede">
+        4.5 years crafting dashboards, e-commerce, ERP, and healthcare apps. Angular, React, Node/Express,
+        and data layers that stay fast, tested, and deployable.
+      </p>
+      <div class="hero__cta">
+        <a class="btn primary" href="#projects">Selected projects</a>
+        <a class="btn ghost" href="#contact">Call or email</a>
+      </div>
+      <div class="hero__metrics">
+        <div class="metric" *ngFor="let metric of metrics">
+          <div class="metric__value">{{ metric.value }}</div>
+          <div class="metric__label">{{ metric.label }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__panel">
+      <div class="panel__header">
+        <span class="pill">Currently</span>
+        <span class="status">
+          <span class="status__dot"></span>
+          <span>Shipping healthcare dashboards</span>
+        </span>
+      </div>
+      <div class="panel__list">
+        <div class="panel__row" *ngFor="let item of currentFocus; let i = index">
+          <div class="panel__index">0{{ i + 1 }}</div>
+          <div>
+            <p class="panel__title">{{ item.title }}</p>
+            <p class="panel__detail">{{ item.detail }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="panel__footer">
+        <span>Availability: Open for select collaborations</span>
+        <a class="link" href="#contact">Start a project</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="spotlights">
+    <div class="section-head">
+      <p class="eyebrow">Focus</p>
+      <h2>Where I create the most impact</h2>
+      <p class="muted">Full-stack delivery that balances UX polish, API stability, and observability.</p>
+    </div>
+    <div class="card-grid">
+      <article class="card reveal" *ngFor="let area of focusAreas">
+        <div class="pill pill--ghost">{{ area.title }}</div>
+        <p class="muted">{{ area.description }}</p>
+        <ul class="bullet-list">
+          <li *ngFor="let point of area.bullets">{{ point }}</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="experience" id="experience">
+    <div class="section-head">
+      <p class="eyebrow">Experience</p>
+      <h2>Impact across products and platforms</h2>
+      <p class="muted">Working across UI, API, data, and operations to keep releases predictable.</p>
+    </div>
+    <div class="timeline">
+      <article class="tile reveal" *ngFor="let item of experience">
+        <div class="tile__meta">
+          <div>
+            <p class="tile__role">{{ item.role }}</p>
+            <p class="tile__company">{{ item.company }}</p>
+          </div>
+          <div class="tile__time">
+            <span>{{ item.period }}</span>
+            <span class="muted">{{ item.location }}</span>
+          </div>
+        </div>
+        <ul class="bullet-list">
+          <li *ngFor="let outcome of item.outcomes">{{ outcome }}</li>
+        </ul>
+        <div class="tag-row">
+          <span class="chip" *ngFor="let tool of item.tools">{{ tool }}</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <div class="section-head">
+      <p class="eyebrow">Selected work</p>
+      <h2>Products and systems I’ve shipped</h2>
+      <p class="muted">A snapshot of case studies with dummy data from recent engagements.</p>
+    </div>
+    <div class="project-grid">
+      <article class="project-card reveal" *ngFor="let project of projects">
+        <div class="project-card__header">
+          <span class="pill">{{ project.type }}</span>
+          <h3>{{ project.title }}</h3>
+          <p class="muted">{{ project.summary }}</p>
+        </div>
+        <ul class="bullet-list bullet-list--muted">
+          <li *ngFor="let outcome of project.outcomes">{{ outcome }}</li>
+        </ul>
+        <div class="tag-row">
+          <span class="chip chip--soft" *ngFor="let tech of project.stack">{{ tech }}</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+    <div class="section-head">
+      <p class="eyebrow">Toolkit</p>
+      <h2>Technologies & habits I lean on</h2>
+      <p class="muted">From product discovery to production-grade delivery, front to back.</p>
+    </div>
+    <div class="chip-cloud">
+      <span class="chip chip--outline" *ngFor="let skill of skills">{{ skill }}</span>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="section-head">
+      <p class="eyebrow">Notes</p>
+      <h2>What collaborators say</h2>
+      <p class="muted">Dummy quotes reflecting how I show up in teams.</p>
+    </div>
+    <div class="quote-grid">
+      <article class="quote reveal" *ngFor="let testimonial of testimonials">
+        <p class="quote__text">“{{ testimonial.quote }}”</p>
+        <p class="quote__meta">{{ testimonial.name }} · {{ testimonial.title }}</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="cta-card">
+      <div>
+        <p class="eyebrow" style="margin-bottom: 20px;">Let’s talk</p>
+        <h2 style="margin-bottom: 20px;">Ship your next release end-to-end.</h2>
+        <p class="muted" style="margin-bottom: 20px;">
+          Need someone to take a feature from UX to API to production? I can help plan, build, test,
+          instrument, and deploy with predictable cadence.
+        </p>
+        <div class="hero__cta" style="margin-bottom: 20px;">
+          <a class="btn primary" href="mailto:naveen2426kumar@gmail.com">Email me</a>
+          <a class="btn ghost" href="#projects">See portfolio highlights</a>
+        </div>
+      </div>
+      <div class="cta-card__list">
+        <div class="mini-card reveal">
+          <p class="muted">Services</p>
+          <ul class="bullet-list">
+            <li>Full-stack feature delivery (Angular/React + Node)</li>
+            <li>API design with SQL/NoSQL data models</li>
+            <li>Cloud deployment and debugging support</li>
+            <li>Performance tuning and optimization</li>
+          </ul>
+        </div>
+        <div class="mini-card reveal">
+          <p class="muted">Rhythm</p>
+          <ul class="bullet-list">
+            <li>Weekly demos & ship notes</li>
+            <li>Design & engineering pairing</li>
+            <li>Observable outcomes</li>
+            <li>Calm, async-friendly workflow</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Built from resume highlights • Naveen Kumar • Call 9600265620 • naveen2426kumar&#64;gmail.com • Based in India, open to remote.</p>
+  </footer>
+</main>
