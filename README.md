@@ -1,27 +1,67 @@
-# NaveenPortfolio
+# Naveen Kumar N — Portfolio (Next.js)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+A rich, animation-heavy portfolio for **Naveen Kumar N**, Senior Full Stack Developer & AI-Enabled Backend Engineer — built with **Next.js 15 (App Router)**, **TypeScript**, and **Framer Motion**.
 
-## Development server
+## Run it
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```bash
+npm install      # already done
+npm run dev      # http://localhost:3000
+```
 
-## Code scaffolding
+Other scripts:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+npm run build    # production build
+npm run start    # serve the production build
+```
 
-## Build
+## Tech stack
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Next.js 15** — App Router, React Server Components, `next/font` (Space Grotesk, Inter, JetBrains Mono)
+- **React 19** + **TypeScript** (strict)
+- **Framer Motion** — scroll-linked timeline, reveal animations, spring scroll progress
+- Zero UI-kit dependency — hand-rolled design system in `app/globals.css`
 
-## Running unit tests
+## Structure
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+app/
+  layout.tsx        # fonts, metadata, root shell
+  page.tsx          # composes all sections
+  globals.css       # design system + animations
+components/
+  ParticleBackground.tsx   # canvas particle network (cursor-reactive)
+  CursorGlow.tsx           # trailing cursor spotlight
+  ScrollProgress.tsx       # spring-driven top progress bar
+  Nav.tsx                  # sticky glass nav + active section + mobile menu
+  Hero.tsx                 # typing effect, orbs, floating chips
+  Marquee.tsx              # infinite competency ticker
+  About.tsx / Skills.tsx / Experience.tsx / Projects.tsx / Achievements.tsx / Contact.tsx
+  Reveal.tsx               # Framer Motion whileInView wrapper
+  TiltCard.tsx             # 3D tilt on hover
+  Magnetic.tsx             # magnetic buttons
+  Counter.tsx              # count-up stats
+  Footer.tsx / BackToTop.tsx
+lib/
+  data.ts           # all resume content (single source of truth)
+legacy/             # the original vanilla HTML/CSS/JS version
+```
 
-## Running end-to-end tests
+## Features
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Animated **canvas particle network** that links nodes and repels from the cursor
+- **Cursor glow**, **magnetic buttons**, **3D tilt** cards (desktop, pointer-fine only)
+- **Typing effect** cycling through roles; floating gradient **orbs** & tech **chips**
+- Sticky **glass navigation** with scroll state, active-section highlighting, mobile slide-in menu
+- Scroll-linked **career timeline** — the progress line fills and nodes light up as you scroll
+- **Reveal-on-scroll** across every section; **count-up** impact stats
+- Fully responsive; respects `prefers-reduced-motion`
 
-## Further help
+## Editing content
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+All copy lives in [`lib/data.ts`](lib/data.ts) — profile, skills, experience, projects, stats and achievements. Edit there and every section updates.
+
+## Deploy
+
+Push to GitHub and import into **Vercel** (zero config for Next.js), or run `npm run build && npm run start` on any Node host.

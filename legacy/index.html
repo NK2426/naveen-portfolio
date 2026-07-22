@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Naveen Kumar N — Senior Full Stack Developer & AI-Enabled Backend Engineer. 6+ years building enterprise web applications across Healthcare, FinTech, ERP, E-Commerce and Raffle platforms." />
+  <title>Naveen Kumar N — Senior Full Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Animated canvas background -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="grain"></div>
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-ring"></div>
+      <div class="loader-text">NK</div>
+    </div>
+    <div class="loader-label">Loading experience<span class="dots"></span></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav-logo">
+      <span class="logo-mark">NK</span>
+      <span class="logo-text">Naveen<span class="accent">.</span></span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#achievements" class="nav-link">Impact</a></li>
+      <li><a href="#contact" class="nav-link nav-cta magnetic">Let's Talk</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="hero">
+    <div class="hero-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span class="pulse-dot"></span> Available for high-impact work
+      </div>
+      <p class="hero-pre reveal">Hi, I'm</p>
+      <h1 class="hero-title">
+        <span class="line"><span class="word gradient-text">Naveen Kumar N</span></span>
+      </h1>
+      <h2 class="hero-role reveal">
+        <span class="type-target" id="typed"></span><span class="type-caret">|</span>
+      </h2>
+      <p class="hero-desc reveal">
+        Senior Full Stack Developer with <strong>6+ years</strong> designing and delivering
+        enterprise web applications across Healthcare, FinTech, ERP, E-Commerce &amp;
+        Raffle platforms — powered by <strong>AI automation</strong>, scalable
+        architecture &amp; obsessive performance.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#projects" class="btn btn-primary magnetic">
+          <span>View My Work</span>
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost magnetic">
+          <span>Get In Touch</span>
+        </a>
+      </div>
+      <div class="hero-socials reveal">
+        <a href="mailto:naveen2426kumar@gmail.com" class="social-link" aria-label="Email">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 4h16v16H4z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 6l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        </a>
+        <a href="tel:+919600265620" class="social-link" aria-label="Phone">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 5c0 8 7 15 15 15l2-4-5-2-2 2c-3-1.5-5.5-4-7-7l2-2-2-5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </a>
+        <span class="social-loc">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          Tamil Nadu, India
+        </span>
+      </div>
+    </div>
+
+    <!-- Floating tech chips -->
+    <div class="hero-chips" aria-hidden="true">
+      <span class="chip float" style="--d:0s">Angular</span>
+      <span class="chip float" style="--d:.6s">React</span>
+      <span class="chip float" style="--d:1.2s">Next.js</span>
+      <span class="chip float" style="--d:1.8s">NestJS</span>
+      <span class="chip float" style="--d:2.4s">Node.js</span>
+      <span class="chip float" style="--d:3s">PostgreSQL</span>
+      <span class="chip float" style="--d:3.6s">TypeScript</span>
+      <span class="chip float" style="--d:4.2s">AI / LLM</span>
+    </div>
+
+    <a href="#about" class="scroll-hint" aria-label="Scroll down">
+      <span class="mouse"><span class="wheel"></span></span>
+      <span class="scroll-text">Scroll</span>
+    </a>
+  </header>
+
+  <!-- Marquee -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Full Stack Development</span><span class="sep">✦</span>
+      <span>System Design</span><span class="sep">✦</span>
+      <span>Microservices</span><span class="sep">✦</span>
+      <span>AI &amp; LLM Integration</span><span class="sep">✦</span>
+      <span>Multi-Tenant SaaS</span><span class="sep">✦</span>
+      <span>OCR Automation</span><span class="sep">✦</span>
+      <span>Performance Optimization</span><span class="sep">✦</span>
+      <span>Team Leadership</span><span class="sep">✦</span>
+      <span>Full Stack Development</span><span class="sep">✦</span>
+      <span>System Design</span><span class="sep">✦</span>
+      <span>Microservices</span><span class="sep">✦</span>
+      <span>AI &amp; LLM Integration</span><span class="sep">✦</span>
+      <span>Multi-Tenant SaaS</span><span class="sep">✦</span>
+      <span>OCR Automation</span><span class="sep">✦</span>
+      <span>Performance Optimization</span><span class="sep">✦</span>
+      <span>Team Leadership</span><span class="sep">✦</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="section-head reveal">
+      <span class="section-num">01</span>
+      <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p class="lead">
+          I build <strong>scalable, production-grade systems</strong> that enterprises
+          rely on every day.
+        </p>
+        <p>
+          Over the last 6+ years I've architected backend systems, led development
+          teams, and shipped software across Healthcare, FinTech, ERP, E-Commerce and
+          Raffle domains. My core is a strong backend foundation — microservices,
+          REST APIs, database design and performance tuning — paired with polished,
+          modern frontends in Angular, React and Next.js.
+        </p>
+        <p>
+          Lately I've been fusing <strong>AI &amp; LLMs</strong> into real products:
+          OCR-driven invoice validation, intelligent forms for automated data
+          extraction, and prompt-engineered automation that removes manual work at
+          scale. I care about clean architecture, measurable performance wins, and
+          mentoring the people I work with.
+        </p>
+        <div class="about-facts">
+          <div class="fact reveal"><span class="fact-k">Role</span><span class="fact-v">Senior Full Stack Developer</span></div>
+          <div class="fact reveal"><span class="fact-k">Focus</span><span class="fact-v">AI-Enabled Backend Engineering</span></div>
+          <div class="fact reveal"><span class="fact-k">Method</span><span class="fact-v">Agile · Scrum</span></div>
+          <div class="fact reveal"><span class="fact-k">Education</span><span class="fact-v">B.E. Computer Science &amp; Engineering</span></div>
+        </div>
+      </div>
+      <div class="about-card reveal tilt">
+        <div class="about-card-inner">
+          <div class="terminal">
+            <div class="terminal-bar">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="terminal-title">naveen@dev ~ profile</span>
+            </div>
+            <pre class="terminal-body"><code><span class="c-key">const</span> <span class="c-var">naveen</span> = {
+  <span class="c-prop">title</span>: <span class="c-str">"Senior Full Stack Developer"</span>,
+  <span class="c-prop">experience</span>: <span class="c-num">6</span>,
+  <span class="c-prop">stack</span>: [<span class="c-str">"Next.js"</span>, <span class="c-str">"NestJS"</span>, <span class="c-str">"React"</span>],
+  <span class="c-prop">databases</span>: [<span class="c-str">"PostgreSQL"</span>, <span class="c-str">"MongoDB"</span>],
+  <span class="c-prop">superpower</span>: <span class="c-str">"AI + OCR automation"</span>,
+  <span class="c-prop">shipsFast</span>: <span class="c-key">true</span>,
+  <span class="c-prop">mentors</span>: <span class="c-fn">buildTeams</span>(<span class="c-num">5</span>)
+};</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section skills" id="skills">
+    <div class="section-head reveal">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Technical <span class="gradient-text">Arsenal</span></h2>
+      <p class="section-sub">The tools I reach for to design, build and scale.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal tilt" data-cat="Frontend">
+        <div class="skill-icon">◈</div>
+        <h3>Frontend</h3>
+        <div class="tags">
+          <span>Angular</span><span>React.js</span><span>Next.js</span><span>TypeScript</span>
+          <span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>SCSS</span><span>Bootstrap</span>
+        </div>
+      </div>
+      <div class="skill-card reveal tilt" data-cat="Backend">
+        <div class="skill-icon">⬡</div>
+        <h3>Backend</h3>
+        <div class="tags">
+          <span>Node.js</span><span>Express.js</span><span>NestJS</span><span>TypeORM</span><span>Sequelize</span>
+        </div>
+      </div>
+      <div class="skill-card reveal tilt" data-cat="Database">
+        <div class="skill-icon">⬢</div>
+        <h3>Database</h3>
+        <div class="tags">
+          <span>PostgreSQL</span><span>MongoDB</span><span>MySQL</span>
+        </div>
+      </div>
+      <div class="skill-card reveal tilt" data-cat="Cloud &amp; DevOps">
+        <div class="skill-icon">☁</div>
+        <h3>Cloud &amp; DevOps</h3>
+        <div class="tags">
+          <span>AWS EC2</span><span>Git</span><span>CI/CD</span><span>Nginx</span><span>PM2</span><span>Docker</span>
+        </div>
+      </div>
+      <div class="skill-card reveal tilt" data-cat="AI &amp; Automation">
+        <div class="skill-icon">✦</div>
+        <h3>AI &amp; Automation</h3>
+        <div class="tags">
+          <span>OpenAI</span><span>Codex</span><span>Claude</span><span>Gemini</span>
+          <span>Prompt Engineering</span><span>OCR</span><span>Tesseract</span>
+        </div>
+      </div>
+      <div class="skill-card reveal tilt" data-cat="Architecture">
+        <div class="skill-icon">◇</div>
+        <h3>Architecture</h3>
+        <div class="tags">
+          <span>Microservices</span><span>REST APIs</span><span>Multi-Tenant SaaS</span>
+          <span>System Design</span><span>Performance</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section experience" id="experience">
+    <div class="section-head reveal">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Career <span class="gradient-text">Timeline</span></h2>
+      <p class="section-sub">Six years of building, leading and shipping.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-line"><div class="timeline-fill" id="timeline-fill"></div></div>
+
+      <div class="tl-item reveal">
+        <div class="tl-node"></div>
+        <div class="tl-card tilt">
+          <span class="tl-date">May 2025 — Present</span>
+          <h3 class="tl-role">Senior Full Stack Developer</h3>
+          <span class="tl-company">Raffle Tech LLC</span>
+          <ul class="tl-points">
+            <li>Designed &amp; built a scalable <strong>Raffle Management platform</strong> using Next.js and NestJS.</li>
+            <li>Engineered secure, high-performance REST APIs — cutting API response times by <strong>~30%</strong>.</li>
+            <li>Built a custom <strong>random winner-selection algorithm</strong> ensuring fairness, uniqueness &amp; speed at database scale.</li>
+            <li>Delivered <strong>AI-powered invoice validation</strong> using OCR + LLM prompt engineering, plus intelligent forms for automated data extraction.</li>
+            <li>Shipped secure government digital projects for <strong>Middle East clients</strong>; supported live enterprise onboarding with minimal downtime.</li>
+            <li>Led architecture discussions, production deployments, code reviews &amp; mentored junior developers.</li>
+          </ul>
+          <div class="tl-tags"><span>Next.js</span><span>NestJS</span><span>PostgreSQL</span><span>AI / OCR</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-node"></div>
+        <div class="tl-card tilt">
+          <span class="tl-date">Dec 2024 — Feb 2025</span>
+          <h3 class="tl-role">Senior Software Engineer</h3>
+          <span class="tl-company">G2 Technology and Solutions</span>
+          <ul class="tl-points">
+            <li>Developed enterprise <strong>healthcare dashboards</strong> using Angular.</li>
+            <li>Integrated Next.js applications with scalable backend services.</li>
+            <li>Built reusable UI components using the <strong>Lit Framework</strong>.</li>
+            <li>Improved application performance &amp; overall user experience.</li>
+          </ul>
+          <div class="tl-tags"><span>Angular</span><span>Next.js</span><span>Lit</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-node"></div>
+        <div class="tl-card tilt">
+          <span class="tl-date">Jul 2023 — Dec 2024</span>
+          <h3 class="tl-role">Associate Full Stack Developer</h3>
+          <span class="tl-company">Vishnu Prasad Research Center</span>
+          <ul class="tl-points">
+            <li>Built <strong>ERP &amp; E-Commerce</strong> platforms using React.js and Node.js.</li>
+            <li>Designed REST APIs and optimized MySQL database performance.</li>
+            <li>Integrated third-party APIs and payment solutions.</li>
+            <li>Delivered responsive applications with modern UI/UX.</li>
+          </ul>
+          <div class="tl-tags"><span>React.js</span><span>Node.js</span><span>MySQL</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-node"></div>
+        <div class="tl-card tilt">
+          <span class="tl-date">Sep 2022 — Apr 2023</span>
+          <h3 class="tl-role">Senior System Engineer</h3>
+          <span class="tl-company">Infosys Limited</span>
+          <ul class="tl-points">
+            <li>Developed <strong>Angular libraries</strong> for enterprise banking applications.</li>
+            <li>Worked on secure <strong>US banking</strong> projects.</li>
+            <li>Improved UI performance and application maintainability.</li>
+          </ul>
+          <div class="tl-tags"><span>Angular</span><span>Banking</span><span>Libraries</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-node"></div>
+        <div class="tl-card tilt">
+          <span class="tl-date">Earlier Experience</span>
+          <h3 class="tl-role">Full Stack Developer</h3>
+          <span class="tl-company">MEAN Stack · React</span>
+          <ul class="tl-points">
+            <li>Built MEAN Stack and React applications.</li>
+            <li>Integrated REST APIs and supported production deployments.</li>
+          </ul>
+          <div class="tl-tags"><span>MEAN</span><span>React</span><span>REST</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section projects" id="projects">
+    <div class="section-head reveal">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+      <p class="section-sub">Systems built to perform at enterprise scale.</p>
+    </div>
+    <div class="projects-grid">
+      <article class="project-card reveal tilt">
+        <div class="project-glow"></div>
+        <div class="project-index">01</div>
+        <div class="project-icon">🎯</div>
+        <h3>Raffle Management Platform</h3>
+        <p>
+          Multi-tenant raffle platform with coupon validation, a custom winner-selection
+          engine, reporting dashboards and integrated payments — built to draw winners
+          fairly and instantly from massive databases.
+        </p>
+        <div class="project-tags">
+          <span>Next.js</span><span>NestJS</span><span>PostgreSQL</span><span>Multi-Tenant SaaS</span>
+        </div>
+        <div class="project-metrics">
+          <span>⚡ ~30% faster APIs</span><span>🔒 Enterprise-grade</span>
+        </div>
+      </article>
+
+      <article class="project-card reveal tilt">
+        <div class="project-glow"></div>
+        <div class="project-index">02</div>
+        <div class="project-icon">🧾</div>
+        <h3>AI Invoice Validation System</h3>
+        <p>
+          OCR + LLM-powered platform that reads, extracts and verifies invoice data
+          automatically — combining Tesseract OCR with prompt-engineered validation to
+          eliminate manual review.
+        </p>
+        <div class="project-tags">
+          <span>OCR</span><span>Tesseract</span><span>OpenAI / LLM</span><span>Prompt Engineering</span>
+        </div>
+        <div class="project-metrics">
+          <span>🤖 Automated verification</span><span>📉 Manual effort ↓</span>
+        </div>
+      </article>
+
+      <article class="project-card reveal tilt">
+        <div class="project-glow"></div>
+        <div class="project-index">03</div>
+        <div class="project-icon">🩺</div>
+        <h3>Healthcare Dashboard</h3>
+        <p>
+          Enterprise Angular dashboard with reusable Lit components and real-time
+          analytics — surfacing critical healthcare data with speed and clarity.
+        </p>
+        <div class="project-tags">
+          <span>Angular</span><span>Lit</span><span>Real-time Analytics</span>
+        </div>
+        <div class="project-metrics">
+          <span>📊 Real-time data</span><span>♻ Reusable components</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS / IMPACT -->
+  <section class="section achievements" id="achievements">
+    <div class="section-head reveal">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Impact by the <span class="gradient-text">Numbers</span></h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat reveal">
+        <div class="stat-num"><span class="count" data-target="6" data-suffix="+">0</span></div>
+        <div class="stat-label">Years of Experience</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-num"><span class="count" data-target="50" data-suffix="%">0</span></div>
+        <div class="stat-label">Performance Improvement</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-num"><span class="count" data-target="30" data-suffix="%">0</span></div>
+        <div class="stat-label">Reduced API Latency</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-num"><span class="count" data-target="5" data-suffix="">0</span></div>
+        <div class="stat-label">Developers Mentored</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-num"><span class="count" data-target="5" data-suffix="+">0</span></div>
+        <div class="stat-label">Industry Domains</div>
+      </div>
+    </div>
+
+    <div class="impact-list">
+      <div class="impact-item reveal"><span class="impact-mark">✦</span> Improved application performance by up to <strong>50%</strong> through targeted optimization.</div>
+      <div class="impact-item reveal"><span class="impact-mark">✦</span> Reduced API latency by <strong>~30%</strong> in production systems.</div>
+      <div class="impact-item reveal"><span class="impact-mark">✦</span> Led and mentored a team of <strong>5 developers</strong>.</div>
+      <div class="impact-item reveal"><span class="impact-mark">✦</span> Delivered solutions across <strong>Healthcare, ERP, FinTech, Government &amp; E-Commerce</strong>.</div>
+      <div class="impact-item reveal"><span class="impact-mark">✦</span> Built scalable backend systems handling <strong>large customer datasets</strong>.</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="contact-inner reveal">
+      <span class="section-num center">06</span>
+      <h2 class="contact-title">Let's build something <span class="gradient-text">exceptional</span>.</h2>
+      <p class="contact-sub">
+        Open to senior full stack &amp; AI-backend roles, freelance builds and
+        high-impact collaborations. Let's talk.
+      </p>
+      <div class="contact-actions">
+        <a href="mailto:naveen2426kumar@gmail.com" class="btn btn-primary magnetic">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 4h16v16H4z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 6l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span>naveen2426kumar@gmail.com</span>
+        </a>
+        <a href="tel:+919600265620" class="btn btn-ghost magnetic">
+          <span>+91 96002 65620</span>
+        </a>
+      </div>
+      <div class="contact-cards">
+        <a href="mailto:naveen@raffle-tech.com" class="contact-card">
+          <span class="cc-icon">✉</span>
+          <span class="cc-k">Work Email</span>
+          <span class="cc-v">naveen@raffle-tech.com</span>
+        </a>
+        <div class="contact-card">
+          <span class="cc-icon">📍</span>
+          <span class="cc-k">Location</span>
+          <span class="cc-v">Tamil Nadu, India</span>
+        </div>
+        <div class="contact-card">
+          <span class="cc-icon">🎓</span>
+          <span class="cc-k">Education</span>
+          <span class="cc-v">B.E. CSE — Erode Sengunthar Engineering College</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Designed &amp; built by <strong>Naveen Kumar N</strong> · <span id="year"></span></p>
+    <p class="footer-note">Senior Full Stack Developer · AI-Enabled Backend Engineer</p>
+  </footer>
+
+  <button class="to-top" id="to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
