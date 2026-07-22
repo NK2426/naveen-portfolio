@@ -13,7 +13,7 @@ export default function About() {
             I build <strong>scalable, production-grade systems</strong> that enterprises rely on every day.
           </p>
           <p>
-            Over the last 6+ years I&apos;ve architected backend systems, led development teams, and shipped software
+            Over the last 5.5+ years I&apos;ve architected backend systems, led development teams, and shipped software
             across Healthcare, FinTech, ERP, E-Commerce and Raffle domains. My core is a strong backend foundation —
             microservices, REST APIs, database design and performance tuning — paired with polished, modern frontends in
             Angular, React and Next.js.

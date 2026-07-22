@@ -7,6 +7,11 @@ export default function Counter({ target, suffix = "" }: { target: number; suffi
   const ref = useRef<HTMLSpanElement>(null);
   const done = useRef(false);
 
+  // Show one decimal place for non-integer targets (e.g. 5.5) so the count-up
+  // lands cleanly instead of rounding to the nearest whole number.
+  const decimals = Number.isInteger(target) ? 0 : 1;
+  const factor = Math.pow(10, decimals);
+
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -21,7 +26,7 @@ export default function Counter({ target, suffix = "" }: { target: number; suffi
             if (start === null) start = now;
             const p = Math.min((now - start) / dur, 1);
             const eased = 1 - Math.pow(1 - p, 3);
-            setVal(Math.round(target * eased));
+            setVal(Math.round(target * eased * factor) / factor);
             if (p < 1) requestAnimationFrame(step);
             else setVal(target);
           };
@@ -32,11 +37,11 @@ export default function Counter({ target, suffix = "" }: { target: number; suffi
     );
     observer.observe(el);
     return () => observer.disconnect();
-  }, [target]);
+  }, [target, factor]);
 
   return (
     <span ref={ref}>
-      {val}
+      {val.toFixed(decimals)}
       {suffix}
     </span>
   );

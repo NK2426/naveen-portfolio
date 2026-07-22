@@ -20,7 +20,7 @@ export default function Experience() {
       <SectionHead
         num="03"
         title={[{ text: "Career " }, { text: "Timeline", gradient: true }]}
-        sub="Six years of building, leading and shipping."
+        sub="5.5+ years of building, leading and shipping."
       />
 
       <div className="timeline" ref={timelineRef}>

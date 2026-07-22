@@ -17,7 +17,7 @@ export const profile = {
   education: "B.E. Computer Science & Engineering — Erode Sengunthar Engineering College",
   resume: "/Naveen_Kumar_N_Resume.pdf",
   summary:
-    "Senior Full Stack Developer with 6+ years designing and delivering enterprise web applications across Healthcare, FinTech, ERP, E-Commerce & Raffle platforms — powered by AI automation, scalable architecture & obsessive performance.",
+    "Senior Full Stack Developer with 5.5+ years designing and delivering enterprise web applications across Healthcare, FinTech, ERP, E-Commerce & Raffle platforms — powered by AI automation, scalable architecture & obsessive performance.",
 };
 
 export const competencies = [
@@ -186,7 +186,7 @@ export const projects: Project[] = [
 export type Stat = { target: number; suffix: string; label: string };
 
 export const stats: Stat[] = [
-  { target: 6, suffix: "+", label: "Years of Experience" },
+  { target: 5.5, suffix: "+", label: "Years of Experience" },
   { target: 50, suffix: "%", label: "Performance Improvement" },
   { target: 30, suffix: "%", label: "Reduced API Latency" },
   { target: 5, suffix: "", label: "Developers Mentored" },

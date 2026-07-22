@@ -9,12 +9,12 @@ const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500"], variab
 export const metadata: Metadata = {
   title: "Naveen Kumar N — Senior Full Stack Developer",
   description:
-    "Naveen Kumar N — Senior Full Stack Developer & AI-Enabled Backend Engineer. 6+ years building enterprise web applications across Healthcare, FinTech, ERP, E-Commerce and Raffle platforms.",
+    "Naveen Kumar N — Senior Full Stack Developer & AI-Enabled Backend Engineer. 5.5+ years building enterprise web applications across Healthcare, FinTech, ERP, E-Commerce and Raffle platforms.",
   keywords: ["Full Stack Developer", "Next.js", "NestJS", "React", "Node.js", "AI", "OCR", "PostgreSQL", "Naveen Kumar"],
   authors: [{ name: "Naveen Kumar N" }],
   openGraph: {
     title: "Naveen Kumar N — Senior Full Stack Developer",
-    description: "6+ years building enterprise web applications powered by AI automation & scalable architecture.",
+    description: "5.5+ years building enterprise web applications powered by AI automation & scalable architecture.",
     type: "website",
   },
 };

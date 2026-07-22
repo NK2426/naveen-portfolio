@@ -148,7 +148,7 @@ export default function Hero() {
           animate="show"
           transition={{ duration: 0.7, delay: 1.15, ease: [0.22, 1, 0.36, 1] }}
         >
-          Senior Full Stack Developer with <strong>6+ years</strong> designing and delivering enterprise web
+          Senior Full Stack Developer with <strong>5.5+ years</strong> designing and delivering enterprise web
           applications across Healthcare, FinTech, ERP, E-Commerce &amp; Raffle platforms — powered by{" "}
           <strong>AI automation</strong>, scalable architecture &amp; obsessive performance.
         </motion.p>
