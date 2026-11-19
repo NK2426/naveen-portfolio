@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { profile } from "@/lib/data";
 import ThemeSwitcher from "./ThemeSwitcher";
+import CopyToggle from "./CopyToggle";
 
 const LINKS = [
   { id: "about", label: "About" },
@@ -71,6 +72,7 @@ export default function Nav() {
         </ul>
 
         <div className="nav-right">
+          <CopyToggle />
           <ThemeSwitcher />
           <a href={profile.resume} download className="btn btn-ghost nav-cta">
             Résumé ↓

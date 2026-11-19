@@ -15,9 +15,16 @@ export default function Experience() {
     <section className="section wrap" id="experience">
       <SectionHead
         num="03"
-        label="trace log"
-        title={[{ text: "The " }, { text: "trace", gradient: true }, { text: "so far." }]}
-        sub="5.5+ years of building, leading and shipping — each node lights up as you scroll."
+        plain={{
+          label: "experience",
+          title: [{ text: "Work " }, { text: "experience.", gradient: true }],
+          sub: "5.5+ years of building, leading and shipping.",
+        }}
+        themed={{
+          label: "trace log",
+          title: [{ text: "The " }, { text: "trace", gradient: true }, { text: "so far." }],
+          sub: "5.5+ years of building, leading and shipping — each node lights up as you scroll.",
+        }}
       />
       <div className="timeline" ref={ref}>
         <div className="timeline-line">

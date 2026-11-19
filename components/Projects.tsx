@@ -8,9 +8,16 @@ export default function Projects() {
     <section className="section wrap" id="projects">
       <SectionHead
         num="04"
-        label="constructs"
-        title={[{ text: "Selected " }, { text: "constructs.", gradient: true }]}
-        sub="Systems built to decide fairly, read reliably and report clearly."
+        plain={{
+          label: "projects",
+          title: [{ text: "Featured " }, { text: "projects.", gradient: true }],
+          sub: "A few of the systems I've designed and built.",
+        }}
+        themed={{
+          label: "constructs",
+          title: [{ text: "Selected " }, { text: "constructs.", gradient: true }],
+          sub: "Systems built to decide fairly, read reliably and report clearly.",
+        }}
       />
       <div className="projects-grid">
         {projects.map((p, i) => (

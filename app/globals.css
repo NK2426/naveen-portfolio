@@ -87,6 +87,10 @@ main { overflow-x: clip; }
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 em { font-style: normal; font-weight: 700; color: var(--gold); }
+/* Wording mode: plain (default) or themed — set on <html data-copy>. */
+:root[data-copy="themed"] .copy-plain,
+:root:not([data-copy="themed"]) .copy-themed { display: none !important; }
+
 .split-mask, .split-word { display: inline-block; vertical-align: top; }
 .split-mask { overflow: hidden; padding-bottom: 0.14em; margin-bottom: -0.14em; }
 .split-inner { display: inline-block; will-change: transform; }
@@ -137,6 +141,18 @@ em { font-style: normal; font-weight: 700; color: var(--gold); }
 .nav-right { display: flex; align-items: center; gap: 16px; }
 .nav-cta { padding: 8px 16px; font-size: 12px; }
 .accent-switch { display: flex; gap: 8px; align-items: center; }
+.copy-toggle {
+  display: inline-flex; align-items: center; gap: 8px; padding: 5px 10px 5px 6px; cursor: pointer;
+  background: rgba(232, 181, 74, 0.06); border: 1px solid var(--line); color: var(--gold-l);
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  transition: border-color 0.25s;
+}
+.copy-toggle:hover { border-color: var(--line-hi); }
+.copy-toggle-track { position: relative; width: 26px; height: 14px; border-radius: 7px; background: rgba(255, 255, 255, 0.12); transition: background 0.25s; }
+.copy-toggle-knob { position: absolute; top: 2px; left: 2px; width: 10px; height: 10px; border-radius: 50%; background: var(--gold-l); transition: transform 0.25s var(--ease); }
+.copy-toggle[aria-checked="true"] .copy-toggle-track { background: var(--primary); }
+.copy-toggle[aria-checked="true"] .copy-toggle-knob { transform: translateX(12px); }
+.copy-toggle-label { min-width: 6ch; text-align: left; }
 .accent-dot { width: 14px; height: 14px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.3); cursor: pointer; transition: transform 0.2s; }
 .accent-dot:hover { transform: scale(1.15); }
 .accent-dot[aria-pressed="true"] { outline: 1px solid var(--gold-l); outline-offset: 3px; }
@@ -312,6 +328,7 @@ em { font-style: normal; font-weight: 700; color: var(--gold); }
   .nav-links-resume { display: block; border-bottom: 0 !important; padding-top: 20px !important; }
   .nav-links-resume .btn { font-size: 14px; }
   .nav-toggle { display: block; }
+  .nav-right { gap: 12px; }
   .nav-cta { display: none; }
   .nav:has(.nav-links.open) { background: rgba(10, 6, 8, 0.97); }
 }

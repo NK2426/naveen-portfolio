@@ -44,7 +44,21 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${manrope.variable} ${inter.variable} ${mono.variable}`} data-accent="crimson">
+    <html
+      lang="en"
+      className={`${manrope.variable} ${inter.variable} ${mono.variable}`}
+      data-accent="crimson"
+      data-copy="plain"
+      suppressHydrationWarning
+    >
+      <head>
+        {/* Apply saved accent + wording mode before first paint (no flash). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var d=document.documentElement,a=localStorage.getItem("nk-accent"),c=localStorage.getItem("nk-copy");if(a==="crimson"||a==="emerald"||a==="gold")d.dataset.accent=a;if(c==="plain"||c==="themed")d.dataset.copy=c}catch(e){}`,
+          }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );

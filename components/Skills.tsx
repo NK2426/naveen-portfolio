@@ -8,9 +8,16 @@ export default function Skills() {
     <section className="section wrap" id="skills">
       <SectionHead
         num="02"
-        label="modules"
-        title={[{ text: "Cortex " }, { text: "modules.", gradient: true }]}
-        sub="Each one integrated, tested in production, and kept sharp."
+        plain={{
+          label: "skills",
+          title: [{ text: "Skills & " }, { text: "tools.", gradient: true }],
+          sub: "Technologies I use in production, every day.",
+        }}
+        themed={{
+          label: "modules",
+          title: [{ text: "Cortex " }, { text: "modules.", gradient: true }],
+          sub: "Each one integrated, tested in production, and kept sharp.",
+        }}
       />
       <div className="skills-grid">
         {skills.map((g, i) => (

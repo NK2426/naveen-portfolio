@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { profile } from "@/lib/data";
 import Magnetic from "./Magnetic";
 import CoreGem from "./CoreGem";
+import Copy from "./Copy";
 
 /** Tech tags evenly spaced around the core; `extra` ones are hidden on small screens. */
 const ORBIT_TAGS: { label: string; extra?: boolean }[] = [
@@ -64,7 +65,7 @@ export default function Hero() {
     <header className="hero wrap" id="hero" ref={ref} onMouseMove={onMouse}>
       <motion.div className="hero-copy" style={{ y: contentY, opacity: fade }}>
         <motion.div className="kicker" {...rise(0)}>
-          {"// synthesis complete · 5.5+ yrs runtime"}
+          <Copy plain="Portfolio · 5.5+ years experience" themed="// synthesis complete · 5.5+ yrs runtime" />
         </motion.div>
         <motion.h1
           className="hero-title"
@@ -78,15 +79,17 @@ export default function Hero() {
           {profile.title} · <b>{profile.subtitle}</b>
         </motion.p>
         <motion.p className="hero-sum" {...rise(0.85)}>
-          Enterprise web applications across Healthcare, FinTech, ERP, E-Commerce &amp; Raffle platforms — reasoned in
-          code, powered by AI automation and calm, scalable architecture.
+          <Copy
+            plain="I design and build enterprise web applications across Healthcare, FinTech, ERP, E-Commerce & Raffle platforms — with AI automation, scalable architecture and a strong focus on performance."
+            themed="Enterprise web applications across Healthcare, FinTech, ERP, E-Commerce & Raffle platforms — reasoned in code, powered by AI automation and calm, scalable architecture."
+          />
         </motion.p>
         <motion.div className="ctas" {...rise(1)}>
           <Magnetic href="#projects" className="btn btn-primary">
-            View the work →
+            <Copy plain="View my work →" themed="View the work →" />
           </Magnetic>
           <Magnetic href="#contact" className="btn btn-ghost">
-            Open a channel
+            <Copy plain="Get in touch" themed="Open a channel" />
           </Magnetic>
           <a href={profile.resume} download className="btn btn-ghost">
             Download CV ↓

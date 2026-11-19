@@ -5,7 +5,11 @@ import SectionHead from "./SectionHead";
 export default function Achievements() {
   return (
     <section className="section wrap" id="impact">
-      <SectionHead num="05" label="impact log" title={[{ text: "Measured " }, { text: "impact.", gradient: true }]} />
+      <SectionHead
+        num="05"
+        plain={{ label: "impact", title: [{ text: "Key " }, { text: "achievements.", gradient: true }] }}
+        themed={{ label: "impact log", title: [{ text: "Measured " }, { text: "impact.", gradient: true }] }}
+      />
       <ol className="impact-list">
         {achievements.map((a, i) => (
           <Reveal key={i} as="li" className="panel impact-item" delay={(i % 5) * 0.06}>

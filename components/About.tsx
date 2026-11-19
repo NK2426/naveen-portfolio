@@ -2,8 +2,9 @@ import { stats, profile } from "@/lib/data";
 import Reveal from "./Reveal";
 import Counter from "./Counter";
 import SectionHead from "./SectionHead";
+import Copy from "./Copy";
 
-/** Relative fill for each diagnostics bar, in stats order. */
+/** Relative fill for each stats bar, in stats order. */
 const METER = [78, 50, 30, 62, 70];
 
 export default function About() {
@@ -11,16 +12,34 @@ export default function About() {
     <section className="section wrap" id="about">
       <SectionHead
         num="01"
-        label="core"
-        title={[{ text: "A mind for " }, { text: "systems.", gradient: true }]}
-        sub="Calm architecture, measured performance, and AI used where it actually earns its place."
+        plain={{
+          label: "about",
+          title: [{ text: "About " }, { text: "me.", gradient: true }],
+          sub: "Backend-first full stack engineer focused on clean architecture, measurable performance and practical AI.",
+        }}
+        themed={{
+          label: "core",
+          title: [{ text: "A mind for " }, { text: "systems.", gradient: true }],
+          sub: "Calm architecture, measured performance, and AI used where it actually earns its place.",
+        }}
       />
 
       <div className="about-grid">
         <Reveal className="panel quote" variant="left">
           <blockquote>
-            &ldquo;Not built to imitate. Built to <em>understand the system</em> &mdash; then make it faster, fairer
-            and quieter.&rdquo;
+            <Copy
+              plain={
+                <>
+                  I build <em>scalable, production-grade systems</em> that enterprises rely on every day.
+                </>
+              }
+              themed={
+                <>
+                  &ldquo;Not built to imitate. Built to <em>understand the system</em> &mdash; then make it faster,
+                  fairer and quieter.&rdquo;
+                </>
+              }
+            />
           </blockquote>
           <p>
             Over 5.5+ years I&apos;ve architected backend systems, led development teams and shipped software across
@@ -44,7 +63,9 @@ export default function About() {
         </Reveal>
 
         <Reveal className="panel diag" delay={0.12} variant="right">
-          <span className="kicker">diagnostics</span>
+          <span className="kicker">
+            <Copy plain="At a glance" themed="diagnostics" />
+          </span>
           {stats.map((s, i) => (
             <div className="diag-row" key={s.label}>
               <span>{s.label}</span>

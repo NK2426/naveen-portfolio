@@ -2,16 +2,25 @@ import { profile } from "@/lib/data";
 import Reveal from "./Reveal";
 import Magnetic from "./Magnetic";
 import SplitText from "./SplitText";
+import Copy from "./Copy";
 
 export default function Contact() {
   return (
     <section className="section wrap contact" id="contact">
       <Reveal>
-        <span className="kicker">06 · open channel</span>
+        <span className="kicker">
+          06 · <Copy plain="contact" themed="open channel" />
+        </span>
       </Reveal>
       <SplitText
         as="h2"
-        className="contact-title"
+        className="contact-title copy-plain"
+        stagger={0.05}
+        segments={[{ text: "Let's work " }, { text: "together.", gradient: true }]}
+      />
+      <SplitText
+        as="h2"
+        className="contact-title copy-themed"
         stagger={0.05}
         segments={[{ text: "Let's build something " }, { text: "worthy.", gradient: true }]}
       />
