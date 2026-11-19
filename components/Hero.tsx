@@ -6,12 +6,32 @@ import { profile } from "@/lib/data";
 import Magnetic from "./Magnetic";
 import CoreGem from "./CoreGem";
 
-const ORBIT = [
-  { label: "Next.js", style: { top: "8%", left: "-2%" } },
-  { label: "NestJS", style: { top: "22%", right: "-4%" } },
-  { label: "PostgreSQL", style: { bottom: "20%", left: "-6%" } },
-  { label: "LLM · OCR", style: { bottom: "6%", right: "4%" } },
+/** Tech tags evenly spaced around the core; `extra` ones are hidden on small screens. */
+const ORBIT_TAGS: { label: string; extra?: boolean }[] = [
+  { label: "Next.js" },
+  { label: "React" },
+  { label: "NestJS" },
+  { label: "Node.js", extra: true },
+  { label: "PostgreSQL" },
+  { label: "LLM · OCR" },
+  { label: "AWS", extra: true },
+  { label: "Docker", extra: true },
+  { label: "TypeScript" },
+  { label: "Angular", extra: true },
 ];
+/** Point on a circle around the core centre, as % of the core box. */
+const ring = (i: number, n: number, r: number) => {
+  const a = ((-90 + (360 / n) * i) * Math.PI) / 180;
+  return [`${(50 + r * Math.cos(a)).toFixed(2)}%`, `${(50 + r * Math.sin(a)).toFixed(2)}%`];
+};
+const CORE_COUNT = ORBIT_TAGS.filter((t) => !t.extra).length;
+let coreIndex = 0;
+// Desktop: all tags evenly spaced. Small screens: only the core tags, re-spaced evenly (CSS picks --mx/--my).
+const ORBIT = ORBIT_TAGS.map((t, i) => {
+  const [x, y] = ring(i, ORBIT_TAGS.length, 47);
+  const [mx, my] = t.extra ? [x, y] : ring(coreIndex++, CORE_COUNT, 50);
+  return { ...t, style: { "--x": x, "--y": y, "--mx": mx, "--my": my } as React.CSSProperties };
+});
 
 const ease = [0.22, 1, 0.36, 1] as const;
 const rise = (delay: number) => ({
@@ -52,8 +72,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0, clipPath: "inset(0 0% 0 0)" }}
           transition={{ duration: 1, delay: 0.15, ease }}
         >
-          {first}
-          <span>{rest.join(" ")}</span>
+          {first} <span>{rest.join(" ")}</span>
         </motion.h1>
         <motion.p className="hero-role" {...rise(0.7)}>
           {profile.title} · <b>{profile.subtitle}</b>
@@ -93,7 +112,7 @@ export default function Hero() {
       >
         <CoreGem />
         {ORBIT.map((o) => (
-          <span key={o.label} className="orbit-tag" style={o.style}>
+          <span key={o.label} className={`orbit-tag${o.extra ? " orbit-extra" : ""}`} style={o.style}>
             {o.label}
           </span>
         ))}

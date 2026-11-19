@@ -150,16 +150,16 @@ em { font-style: normal; font-weight: 700; color: var(--gold); }
 /* ---------- Hero ---------- */
 .hero {
   min-height: calc(100svh - 64px);
-  display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 40px;
+  display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 56px;
   padding-top: 40px; padding-bottom: 60px;
 }
 .hero-title {
   font-family: var(--font-display); font-weight: 800;
-  font-size: clamp(46px, 7vw, 92px); line-height: 0.98; letter-spacing: -0.035em;
-  margin: 18px 0;
+  font-size: clamp(34px, 5.4vw, 72px); line-height: 1.05; letter-spacing: -0.035em;
+  margin: 18px 0; white-space: nowrap;
 }
 .hero-title span {
-  display: block;
+  display: inline;
   background: linear-gradient(100deg, var(--gold-l), var(--gold) 40%, var(--primary));
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
@@ -186,7 +186,7 @@ em { font-style: normal; font-weight: 700; color: var(--gold); }
 .gem-breathe { transform-origin: 200px 200px; animation: breathe 5s ease-in-out infinite; }
 @keyframes breathe { 50% { transform: scale(1.04); filter: brightness(1.2); } }
 .orbit-tag {
-  position: absolute; white-space: nowrap;
+  position: absolute; left: var(--x); top: var(--y); white-space: nowrap; transform: translate(-50%, -50%);
   font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; color: var(--muted);
   padding: 5px 10px; border: 1px solid var(--line); background: rgba(18, 10, 13, 0.85);
 }
@@ -317,8 +317,10 @@ em { font-style: normal; font-weight: 700; color: var(--gold); }
 }
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; gap: 10px; padding-top: 24px; min-height: auto; }
-  .core { order: -1; max-width: 300px; }
+  .core { order: -1; max-width: 300px; margin: 14px auto 30px; }
   .orbit-tag { font-size: 10px; padding: 4px 7px; }
+  .orbit-extra { display: none; }
+  .orbit-tag { left: var(--mx); top: var(--my); }
   .about-grid, .skills-grid, .projects-grid, .contact-cards, .impact-list { grid-template-columns: 1fr; }
   .section { padding-top: 80px; }
   .quote { padding: 30px; }
