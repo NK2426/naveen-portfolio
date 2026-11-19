@@ -1,10 +1,27 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope, Inter, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const manrope = Manrope({ subsets: ["latin"], weight: ["500", "600", "700", "800"], variable: "--font-manrope" });
-const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "600"], variable: "--font-inter" });
-const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-mono-jb" });
+// Self-hosted variable fonts (Fontsource packages) — no Google Fonts fetch at build time,
+// which was failing on Netlify.
+const manrope = localFont({
+  src: "../node_modules/@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2",
+  weight: "200 800",
+  variable: "--font-manrope",
+  display: "swap",
+});
+const inter = localFont({
+  src: "../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2",
+  weight: "100 900",
+  variable: "--font-inter",
+  display: "swap",
+});
+const mono = localFont({
+  src: "../node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2",
+  weight: "100 800",
+  variable: "--font-mono-jb",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Naveen Kumar N — Senior Full Stack Developer",
