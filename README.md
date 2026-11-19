@@ -18,7 +18,7 @@ npm run start    # serve the production build
 
 ## Tech stack
 
-- **Next.js 15** — App Router, React Server Components, `next/font` (Space Grotesk, Inter, JetBrains Mono)
+- **Next.js 15** — App Router, React Server Components, `next/font` (Manrope, Inter, JetBrains Mono)
 - **React 19** + **TypeScript** (strict)
 - **Framer Motion** — scroll-linked timeline, reveal animations, spring scroll progress
 - Zero UI-kit dependency — hand-rolled design system in `app/globals.css`
@@ -31,11 +31,13 @@ app/
   page.tsx          # composes all sections
   globals.css       # design system + animations
 components/
-  ParticleBackground.tsx   # canvas particle network (cursor-reactive)
+  CircuitField.tsx         # fixed hex lattice + circuit traces with light pulses
+  CoreGem.tsx              # faceted core gem inside rotating HUD rings (hero)
+  ThemeSwitcher.tsx        # crimson / emerald / gold accent switch
   CursorGlow.tsx           # trailing cursor spotlight
   ScrollProgress.tsx       # spring-driven top progress bar
   Nav.tsx                  # sticky glass nav + active section + mobile menu
-  Hero.tsx                 # typing effect, orbs, floating chips
+  Hero.tsx                 # name, role, CTAs, parallax core gem
   Marquee.tsx              # infinite competency ticker
   About.tsx / Skills.tsx / Experience.tsx / Projects.tsx / Achievements.tsx / Contact.tsx
   Reveal.tsx               # Framer Motion whileInView wrapper
@@ -50,9 +52,9 @@ legacy/             # the original vanilla HTML/CSS/JS version
 
 ## Features
 
-- Animated **canvas particle network** that links nodes and repels from the cursor
+- **Synthezoid theme**: obsidian base, crimson/emerald/gold accents, holographic circuit background
 - **Cursor glow**, **magnetic buttons**, **3D tilt** cards (desktop, pointer-fine only)
-- **Typing effect** cycling through roles; floating gradient **orbs** & tech **chips**
+- Breathing faceted **core gem** with rotating HUD rings and orbiting tech tags
 - Sticky **glass navigation** with scroll state, active-section highlighting, mobile slide-in menu
 - Scroll-linked **career timeline** — the progress line fills and nodes light up as you scroll
 - **Reveal-on-scroll** across every section; **count-up** impact stats

@@ -5,23 +5,22 @@ import SectionHead from "./SectionHead";
 
 export default function Projects() {
   return (
-    <section className="section projects" id="projects">
+    <section className="section wrap" id="projects">
       <SectionHead
         num="04"
-        title={[{ text: "Featured " }, { text: "Projects", gradient: true }]}
-        sub="Systems built to perform at enterprise scale."
+        label="constructs"
+        title={[{ text: "Selected " }, { text: "constructs.", gradient: true }]}
+        sub="Systems built to decide fairly, read reliably and report clearly."
       />
-
       <div className="projects-grid">
         {projects.map((p, i) => (
-          <Reveal key={p.title} delay={(i % 3) * 0.12} variant="rotate">
-            <TiltCard className="project-card">
-              <div className="project-glow" />
-              <div className="project-index">{p.index}</div>
-              <div className="project-icon">{p.icon}</div>
+          <Reveal key={p.title} delay={i * 0.1}>
+            <TiltCard className="panel project" max={6}>
+              <span className="project-glow" aria-hidden="true" />
+              <span className="project-no">{p.index}</span>
               <h3>{p.title}</h3>
               <p>{p.description}</p>
-              <div className="project-tags">
+              <div className="tags">
                 {p.tags.map((t) => (
                   <span key={t}>{t}</span>
                 ))}

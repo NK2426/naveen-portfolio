@@ -1,83 +1,59 @@
+import { stats, profile } from "@/lib/data";
 import Reveal from "./Reveal";
-import TiltCard from "./TiltCard";
+import Counter from "./Counter";
 import SectionHead from "./SectionHead";
+
+/** Relative fill for each diagnostics bar, in stats order. */
+const METER = [78, 50, 30, 62, 70];
 
 export default function About() {
   return (
-    <section className="section about" id="about">
-      <SectionHead num="01" title={[{ text: "About " }, { text: "Me", gradient: true }]} />
+    <section className="section wrap" id="about">
+      <SectionHead
+        num="01"
+        label="core"
+        title={[{ text: "A mind for " }, { text: "systems.", gradient: true }]}
+        sub="Calm architecture, measured performance, and AI used where it actually earns its place."
+      />
 
       <div className="about-grid">
-        <Reveal className="about-text" variant="left">
-          <p className="lead">
-            I build <strong>scalable, production-grade systems</strong> that enterprises rely on every day.
-          </p>
+        <Reveal className="panel quote" variant="left">
+          <blockquote>
+            &ldquo;Not built to imitate. Built to <em>understand the system</em> &mdash; then make it faster, fairer
+            and quieter.&rdquo;
+          </blockquote>
           <p>
-            Over the last 5.5+ years I&apos;ve architected backend systems, led development teams, and shipped software
-            across Healthcare, FinTech, ERP, E-Commerce and Raffle domains. My core is a strong backend foundation —
-            microservices, REST APIs, database design and performance tuning — paired with polished, modern frontends in
-            Angular, React and Next.js.
+            Over 5.5+ years I&apos;ve architected backend systems, led development teams and shipped software across
+            Healthcare, FinTech, ERP, E-Commerce and Raffle domains &mdash; microservices, REST APIs, database design
+            and performance tuning, paired with polished Angular, React and Next.js frontends.
           </p>
           <p>
             Lately I&apos;ve been fusing <strong>AI &amp; LLMs</strong> into real products: OCR-driven invoice
-            validation, intelligent forms for automated data extraction, and prompt-engineered automation that removes
-            manual work at scale. I care about clean architecture, measurable performance wins, and mentoring the people
-            I work with.
+            validation, intelligent forms and prompt-engineered automation that removes manual work at scale.
           </p>
-          <div className="about-facts">
-            <div className="fact">
-              <span className="fact-k">Role</span>
-              <span className="fact-v">Senior Full Stack Developer</span>
+          <div className="facts">
+            <div>
+              <span className="kicker">Focus</span>
+              AI-Enabled Backend Engineering
             </div>
-            <div className="fact">
-              <span className="fact-k">Focus</span>
-              <span className="fact-v">AI-Enabled Backend Engineering</span>
-            </div>
-            <div className="fact">
-              <span className="fact-k">Method</span>
-              <span className="fact-v">Agile · Scrum</span>
-            </div>
-            <div className="fact">
-              <span className="fact-k">Education</span>
-              <span className="fact-v">B.E. Computer Science &amp; Engineering</span>
+            <div>
+              <span className="kicker">Education</span>
+              {profile.education.split(" — ")[0]}
             </div>
           </div>
         </Reveal>
 
-        <Reveal className="about-card" delay={0.15} variant="right">
-          <TiltCard className="about-card-inner">
-            <div className="terminal">
-              <div className="terminal-bar">
-                <span className="dot red" />
-                <span className="dot yellow" />
-                <span className="dot green" />
-                <span className="terminal-title">naveen@dev ~ profile</span>
-              </div>
-              <pre className="terminal-body">
-                <code>
-                  <span className="c-key">const</span> <span className="c-var">naveen</span> = {"{"}
-                  {"\n  "}
-                  <span className="c-prop">title</span>: <span className="c-str">&quot;Senior Full Stack Developer&quot;</span>,
-                  {"\n  "}
-                  <span className="c-prop">experience</span>: <span className="c-num">6</span>,
-                  {"\n  "}
-                  <span className="c-prop">stack</span>: [<span className="c-str">&quot;Next.js&quot;</span>,{" "}
-                  <span className="c-str">&quot;NestJS&quot;</span>, <span className="c-str">&quot;React&quot;</span>],
-                  {"\n  "}
-                  <span className="c-prop">databases</span>: [<span className="c-str">&quot;PostgreSQL&quot;</span>,{" "}
-                  <span className="c-str">&quot;MongoDB&quot;</span>],
-                  {"\n  "}
-                  <span className="c-prop">superpower</span>: <span className="c-str">&quot;AI + OCR automation&quot;</span>,
-                  {"\n  "}
-                  <span className="c-prop">shipsFast</span>: <span className="c-key">true</span>,
-                  {"\n  "}
-                  <span className="c-prop">mentors</span>: <span className="c-fn">buildTeams</span>(
-                  <span className="c-num">5</span>)
-                  {"\n};"}
-                </code>
-              </pre>
+        <Reveal className="panel diag" delay={0.12} variant="right">
+          <span className="kicker">diagnostics</span>
+          {stats.map((s, i) => (
+            <div className="diag-row" key={s.label}>
+              <span>{s.label}</span>
+              <b>
+                <Counter target={s.target} suffix={s.suffix} />
+              </b>
+              <span className="bar" style={{ "--w": `${METER[i] ?? 60}%` } as React.CSSProperties} />
             </div>
-          </TiltCard>
+          ))}
         </Reveal>
       </div>
     </section>

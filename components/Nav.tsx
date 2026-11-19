@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { profile } from "@/lib/data";
 import ThemeSwitcher from "./ThemeSwitcher";
 
 const LINKS = [
@@ -8,7 +9,8 @@ const LINKS = [
   { id: "skills", label: "Skills" },
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
-  { id: "achievements", label: "Impact" },
+  { id: "impact", label: "Impact" },
+  { id: "contact", label: "Contact" },
 ];
 
 export default function Nav() {
@@ -26,63 +28,63 @@ export default function Nav() {
   useEffect(() => {
     const sections = LINKS.map((l) => document.getElementById(l.id)).filter(Boolean) as HTMLElement[];
     const observer = new IntersectionObserver(
-      (entries) => {
+      (entries) =>
         entries.forEach((e) => {
           if (e.isIntersecting) setActive(e.target.id);
-        });
-      },
-      { threshold: 0.5 }
+        }),
+      { rootMargin: "-45% 0px -50% 0px" }
     );
     sections.forEach((s) => observer.observe(s));
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+  }, [open]);
+
   const close = () => setOpen(false);
 
   return (
     <nav className={`nav${scrolled ? " scrolled" : ""}`}>
-      <a href="#hero" className="nav-logo" onClick={close}>
-        <span className="logo-mark">NK</span>
-        <span className="logo-text">
-          Naveen<span className="accent">.</span>
-        </span>
-      </a>
+      <div className="wrap nav-inner">
+        <a href="#hero" className="brand" onClick={close}>
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M20 3 34 20 20 37 6 20z" fill="#e8b54a" />
+            <path d="M20 3v34M6 20h28M13 11.5 27 28.5M27 11.5 13 28.5" stroke="#7a0d24" strokeWidth="1" />
+          </svg>
+          <span>NKN</span>
+        </a>
 
-      <div className="nav-right">
-        <ThemeSwitcher />
         <ul className={`nav-links${open ? " open" : ""}`}>
-        {LINKS.map((l) => (
-          <li key={l.id}>
-            <a href={`#${l.id}`} className={`nav-link${active === l.id ? " active" : ""}`} onClick={close}>
-              {l.label}
+          {LINKS.map((l) => (
+            <li key={l.id}>
+              <a href={`#${l.id}`} className={active === l.id ? "active" : undefined} onClick={close}>
+                {l.label}
+              </a>
+            </li>
+          ))}
+          <li className="nav-links-resume">
+            <a href={profile.resume} download className="btn btn-ghost" onClick={close}>
+              Résumé ↓
             </a>
           </li>
-        ))}
-        <li>
-          <a href="/Naveen_Kumar_N_Resume.pdf" download className="nav-link nav-resume" onClick={close}>
-            <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
-              <path d="M12 3v12M8 11l4 4 4-4M5 21h14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            <span>Résumé</span>
-          </a>
-        </li>
-        <li>
-          <a href="#contact" className="nav-link nav-cta" onClick={close}>
-            Let&apos;s Talk
-          </a>
-        </li>
-      </ul>
+        </ul>
 
-      <button
-        className={`nav-toggle${open ? " open" : ""}`}
-        aria-label="Toggle menu"
-        aria-expanded={open}
-        onClick={() => setOpen((o) => !o)}
-      >
-        <span />
-        <span />
-        <span />
-      </button>
+        <div className="nav-right">
+          <ThemeSwitcher />
+          <a href={profile.resume} download className="btn btn-ghost nav-cta">
+            Résumé ↓
+          </a>
+          <button
+            className={`nav-toggle${open ? " open" : ""}`}
+            aria-label="Toggle menu"
+            aria-expanded={open}
+            onClick={() => setOpen((o) => !o)}
+          >
+            <span />
+            <span />
+          </button>
+        </div>
       </div>
     </nav>
   );

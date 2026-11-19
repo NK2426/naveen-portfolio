@@ -1,4 +1,4 @@
-import ParticleBackground from "@/components/ParticleBackground";
+import CircuitField from "@/components/CircuitField";
 import CursorGlow from "@/components/CursorGlow";
 import ScrollProgress from "@/components/ScrollProgress";
 import Nav from "@/components/Nav";
@@ -16,8 +16,7 @@ import BackToTop from "@/components/BackToTop";
 export default function Home() {
   return (
     <>
-      <ParticleBackground />
-      <div className="grain" />
+      <CircuitField />
       <CursorGlow />
       <ScrollProgress />
       <Nav />
